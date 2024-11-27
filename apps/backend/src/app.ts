@@ -1,9 +1,12 @@
-import "dotenv/config";
-
 import express, { Request, Response } from "express";
 
 import authRouter from "./routes/authRouter";
+import dotenv from "dotenv";
 import userRouter from "./routes/userRouter";
+
+dotenv.config({
+  path: `.env${process.env?.NODE_ENV ? `.${process.env.NODE_ENV}` : ""}`,
+});
 
 const app = express();
 const port = process.env.PORT || 3001;
