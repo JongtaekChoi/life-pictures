@@ -5,8 +5,8 @@
     "packages/*"
   ],
   "scripts": {
-    "start": "turbo run dev",
-    "start:backend": "yarn workspace backend dev",
+    "start": "turbo run start",
+    "start:backend": "yarn workspace backend start",
     "build": "turbo run build",
     "clean": "turbo run clean && rm -rf node_modules",
     "format": "prettier --write \"**/*.{ts,tsx,js,jsx,json,md}\" --ignore-path .gitignore"

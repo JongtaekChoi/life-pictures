@@ -7,7 +7,7 @@
       "outputs": ["dist/**", ".next/**", "!.next/cache/**"],
       "dependsOn": ["^build"]
     },
-    "dev": {
+    "start": {
       "cache": false,
       "persistent": true
     },
