@@ -8,8 +8,20 @@ generator client {
 }
 
 model User {
-  id       Int    @id @default(autoincrement())
+  id       Int     @id @default(autoincrement())
   name     String
-  email    String @unique
+  email    String  @unique
   password String
+  images   Image[] // 유저가 업로드한 이미지
+}
+
+model Image {
+  id         Int       @id @default(autoincrement()) // 이미지 ID
+  userId     Int // 외래 키
+  user       User      @relation(fields: [userId], references: [id]) // User와 관계 설정
+  s3Key      String // S3에 저장된 이미지 키
+  isPublic   Boolean   @default(true) // 공개 여부 (기본값: 공개)
+  location   String? // 위치 정보 (옵션)
+  capturedAt DateTime? // 이미지 생성(촬영) 날짜
+  createdAt  DateTime  @default(now()) // 이미지 업로드 날짜
 }
