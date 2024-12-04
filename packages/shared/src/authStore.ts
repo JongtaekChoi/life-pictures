@@ -18,4 +18,10 @@ export const useAuthStore = create<AuthState>((set) => ({
     localStorage.removeItem("token");
     set({ isAuthenticated: false, token: null });
   },
+  retrive: () => {
+    const token = localStorage.getItem("token");
+    if (token) {
+      set({ isAuthenticated: true, token });
+    }
+  },
 }));

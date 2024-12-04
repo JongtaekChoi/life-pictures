@@ -8,6 +8,7 @@ import {
   ThemeProvider,
 } from "@react-navigation/native";
 
+import { GestureHandlerRootView } from "react-native-gesture-handler";
 import { Stack } from "expo-router";
 import { StatusBar } from "expo-status-bar";
 import { useColorScheme } from "@/hooks/useColorScheme";

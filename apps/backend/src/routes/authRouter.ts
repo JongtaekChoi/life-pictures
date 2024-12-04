@@ -30,7 +30,7 @@ router.post("/signup", async (req: Request, res: Response) => {
 });
 
 // 로그인 라우트
-router.post("/login", async (req: Request, res: Response) => {
+router.post("/signin", async (req: Request, res: Response) => {
   const { email, password } = req.body;
 
   try {
